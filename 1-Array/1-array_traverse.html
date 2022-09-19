@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Array | Traversing</title>
+    <script>
+      const data = [9, 45, 1, 7, 23, 67, 0, 12, 43, 77];
+      document.write("************Traversing An Array*************** <br>");
+      document.write(
+        "We can traverse an array by iterating using for/while loop <br>"
+      );
+      for (let i = 0; i < data.length; i++) {
+        document.write(`Array ${i} is  ${data[i]} <br />`);
+      }
+      document.write(
+        "**************Accessing An Element in an Array*************** <br/>"
+      );
+      document.write(
+        `3rd Element in data=[9, 45, 1, 7, 23, 67, 0, 12, 43, 77] array (data[3]) is ${data[3]} <br/>`
+      );
+      document.write(
+        `5th Element in data=[9, 45, 1, 7, 23, 67, 0, 12, 43, 77] array (data[5]) is ${data[5]} <br/>`
+      );
+      const displayVal = () => {
+        let el = document.getElementById("val").value;
+        el = parseInt(el);
+        el < data.length && el >= 0
+          ? alert(`At ${el} index, value present is ${data[el]}`)
+          : alert("Out of Range");
+      };
+    </script>
+  </head>
+  <body>
+    <h3>**************Accessing An Element in an Array***************</h3>
+    <p>
+      Requirement: We have an input from that input we are taking a number value
+      from user & once clicking on button we are printing which value is present
+      at the given number index inside an array
+    </p>
+    <code>const data = [9, 45, 1, 7, 23, 67, 0, 12, 43, 77];</code><br />
+    <input type="number" id="val" min="0" /> <br />
+    <button onclick="displayVal()">display val</button>
+  </body>
+</html>
