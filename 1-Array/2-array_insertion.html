@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Array | Insertion</title>
+    <script>
+      const data = [1, 2, 3, 4, 5, 8, 9, 10, 30, 20, 40];
+      let newEl = 70;
+      let position = 2;
+      console.log(data, "Before For Loop");
+      // for (let i = data.length - 1; i >= 0; i--) {
+      //   if (i >= position) {
+      //     data[i + 1] = data[i];
+      //     if (i === position) {
+      //       data[i] = newEl;
+      //     }
+      //   }
+      // }
+
+      /*
+        Function to insert a new element to the given position using for loop
+        @param array, position, element
+      */
+      const insertFun = (arr, pos, el) => {
+        if (pos <= arr.length && typeof pos === "number") {
+          for (let i = arr.length - 1; i >= 0; i--) {
+            if (i >= pos) {
+              data[i + 1] = data[i];
+              if (i === pos) {
+                data[i] = el;
+              }
+            }
+          }
+          return arr;
+        } else {
+          alert("Out of Range");
+        }
+      };
+
+      // const newData = insertFun(data, 4, 888);
+
+      /*
+        Function to insert a new element to the given position using for loop
+      */
+      const insert = () => {
+        const data = [1, 2, 3, 4, 5, 8, 9, 10, 30, 20, 40];
+        const el = parseInt(document.getElementById("el").value);
+        const pos = parseInt(document.getElementById("pos").value);
+        debugger;
+        if (pos <= data.length - 1) {
+          for (let i = data.length - 1; i >= 0; i--) {
+            if (i >= pos) {
+              data[i + 1] = data[i];
+              if (i === pos) {
+                data[i] = el;
+              }
+            }
+            console.log(data);
+            return data;
+          }
+        } else {
+          alert("Out Of Range");
+        }
+      };
+
+      /* In Javascript the same thing can be done using array.splice() method */
+      const items = [1, 2, 3, 4, 5, 6, 7];
+      console.log(items, "Items before splice");
+      items.splice(3, 0, 50);
+      console.log(items, "Items After splice");
+    </script>
+  </head>
+  <body>
+    <h3>**************Insert an Element in An Array***************</h3>
+    <p>
+      Requirement: We have an array, now we will insert an element at any given
+      position to the given array
+    </p>
+    <br />
+
+    <input type="number" id="el" placeholder="Enter New Value" />
+    <input type="number" id="pos" placeholder="Enter positon" />
+    <button onclick="insert()">Insert</button>
+    <br />
+
+    <br />
+    <br />
+    <iframe
+      src="https://www.thiscodeworks.com/embed/632a813a676d360015ab8040"
+      style="width: 100%; height: 281px"
+      frameborder="0"
+    ></iframe>
+    <br />
+    <br />
+    <p>
+      In Javascript the same thing can be done using <code>array.splice()</code>
+    </p>
+    <br />
+    <iframe
+      src="https://www.thiscodeworks.com/embed/632a8953676d360015ab8050"
+      style="width: 100%; height: 151px"
+      frameborder="0"
+    ></iframe>
+  </body>
+</html>
