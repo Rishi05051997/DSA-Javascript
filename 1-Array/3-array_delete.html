@@ -45,13 +45,21 @@
           alert("Out of Range");
         }
       };
+      // We can delete an element by using default Array.splice(start, deleteCount,
+      // element) method
+      data.splice(3, 1);
     </script>
   </head>
   <body>
-    <h3>**************Insert an Element in An Array***************</h3>
+    <h3>**************Delete an Element From An Array***************</h3>
     <p>
       Requirement: We have an array, now we will delete an element at any given
       position from the given array
+    </p>
+    <br />
+    <p>
+      We can delete an element by using default Array.splice(start, deleteCount,
+      element) method
     </p>
     <br />
     <code>const data = [10, 50, 30, 66, 89, 23, 56, 34, 27];</code>

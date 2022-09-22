@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Array | Searching</title>
+    <script>
+      //   const data = [20, 40.6, 70, 20, 22, 66];
+      //   let searchEl = 22;
+      //   for (let i = 0; i <= data.length; i++) {
+      //     if (data[i] === searchEl) {
+      //       console.log(i);
+      //       break;
+      //     }
+      //   }
+      /* 
+        Function to Search a given element inside an array
+        @param element
+      */
+      const searchElement = (element) => {
+        const data = [20, 40, 6, 70, 20, 22, 66];
+        for (let i = 0; i <= data.length - 1; i++) {
+          if (data[i] === element) {
+            console.log(`Element Found at ${i}`);
+            break;
+          }
+        }
+        console.log("No Element Found");
+      };
+      //   searchElement(126);
+      console.log(data.indexOf(70));
+
+      const saerchInput = () => {
+        const data = [20, 40, 6, 70, 20, 22, 66];
+        const element = parseInt(document.getElementById("el").value);
+        for (let i = 0; i <= data.length - 1; i++) {
+          if (data[i] === element) {
+            console.log(`Element Found at ${i}`);
+            break;
+          }
+        }
+        console.log("No Element Found");
+      };
+    </script>
+  </head>
+  <body>
+    <h3>**************Search an Element in An Array***************</h3>
+    <p>
+      Requirement: We have an array, now we will search an element inside the
+      given array
+    </p>
+    <br />
+    <p>
+      We can search an element by using default Array.indexOf(element) method
+    </p>
+    <br />
+    <br />
+    <code>const data = [20, 40,6, 70, 20, 22, 66];</code>
+    <br />
+    <input placeholder="Search a Given Element" id="el" type="number" />
+    <button onclick="saerchInput()">Saerch</button>
+    <iframe
+      src="https://www.thiscodeworks.com/embed/632bbd33b242da00153c6ce0"
+      style="width: 100%; height: 281px"
+      frameborder="0"
+    ></iframe>
+  </body>
+</html>
