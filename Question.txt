@@ -1,0 +1,17 @@
+1.Array Traversing
+2.Accessing An Element from An Array
+3.Array Insertion -->> Insert an element inside an Array
+    a.custom way
+    b.inbuilt way
+4.Array Deletion -->> Delete an element from an array 
+    a.custom way
+    b.inbuilt way
+5.Array Searching (Linear Search)
+    a.custom way
+    b.inbuilt way
+6.Array Merging (Using for loop)
+    a.custom way
+    b.inbuilt way
+7.Array Merging (Using while loop)
+    a.custom way
+    b.inbuilt way
