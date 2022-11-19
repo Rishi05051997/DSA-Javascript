@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Array | Sorting</title>
+    <script>
+      const data = [40, 30, 12, 25];
+      const sortedArr = [];
+      for (let i = 0; i < data.length; i++) {
+        for (let j = 0; j < data.length; j++) {
+          console.log(data);
+          if (data[j] > data[j + 1]) {
+            // 40 > 30
+            let temp = data[j]; // temp = 40
+            data[j] = data[j + 1]; // 30 is replaced by 40
+            data[j + 1] = temp; // 40 is replaced by 30
+            //// [30,40,12,25] -->> [30,12,40,25] -->> [12,30,40,25] -->> [12,30,25,40] -->> [12,25,30,40] finally it's sorted
+            //// Here we are mainly using swapping concept by comparing
+
+            //// [40, 30, 12, 25]
+            //// [30, 40, 12, 25]
+            //// [30, 12, 40, 25]
+            //// [30, 12, 25, 40]
+            //// [30, 12, 25, 40]
+            //// [12, 30, 25, 40]
+            //// [12, 25, 30, 40]
+            //// [12, 25, 30, 40]
+            //// [12, 25, 30, 40]
+            //// [12, 25, 30, 40]
+            //// [12, 25, 30, 40]
+            //// [12, 25, 30, 40]
+            //// [12, 25, 30, 40]
+            //// [12, 25, 30, 40]
+            //// [12, 25, 30, 40]
+            //// [12, 25, 30, 40]
+          }
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Array Sorting | Bubble Sort</h1>
+  </body>
+</html>
