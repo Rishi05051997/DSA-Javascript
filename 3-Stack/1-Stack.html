@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stack | Data Structure</title>
+    <script>
+      // Stack: Stack is type of Linear Data Structure
+      // Linear Data Structure is nothing but elements are arrange in a specific sequence
+      // Examples Of Linear Data Structure -->> Stack, Queue, Array
+
+      // Non Linear Data Structure is nothing but elements are arrange in randomly.
+      // Examples Of Non Linear Data Structure -->> Graph,Tree
+
+      /// ***** Stack *****
+      // Stack: Operation perform either on start or end
+      // LIFO -->> Last In First Out (Push,Shift)
+      // FILO -->> Fisrt In Last Out (Unshift,Pop)
+      // We can also max number of elements in case of Stack
+      // Push Operation -->> Add new Element to the end of an Array
+      // Pop Operation -->> Remove last element from an array
+      // isEmpty -->> Whether given array is empty or not
+      // peak -->> it tells whether given array contains max number of elements or not
+
+      let data = [];
+      let currentSize = data.length;
+      let max = 5;
+      function customPush(val) {
+        if (max >= currentSize) {
+          data[currentSize] = val;
+          currentSize++;
+        }
+      }
+      customPush(20);
+      customPush(40);
+      customPush(60);
+      customPush(80);
+      customPush(100);
+      customPush(120);
+      customPush(140);
+      customPush(160);
+      console.warn(data, "Before POP");
+      function customPop() {
+        if (currentSize === 0) {
+          alert("Array already empty");
+        } else {
+          currentSize--;
+          data.length = currentSize;
+        }
+      }
+      customPop();
+      customPop();
+      customPop();
+      customPop();
+      console.warn(data, "After POP");
+    </script>
+  </head>
+  <body></body>
+</html>

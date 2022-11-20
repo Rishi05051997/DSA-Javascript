@@ -15,3 +15,14 @@
 7.Array Merging (Using while loop)
     a.custom way
     b.inbuilt way
+8.Array Sorting (Bubble Sort) 
+9.Recusrion (Basic)
+    a.Factorial Of Number
+10.Indirect Recusrion
+11.Haid And Tail Recursion
+12.Reverse An Array using Recursion
+13.Stack:
+    a. Custom Push
+    b. Custom Pull
+14. Take Input & push that element to an array using button & remove last element by button clicking
+15. Reverse a String using Stack -->> custom push & pop & custom reverse function

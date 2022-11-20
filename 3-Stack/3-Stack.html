@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      let stack = [];
+      let currentSize = stack.length;
+
+      function push(val) {
+        stack[currentSize] = val;
+        currentSize++;
+      }
+
+      function pop() {
+        let lastRemovedItem = stack[currentSize - 1];
+        if (currentSize === 0) {
+          alert("Stack is empty");
+        } else {
+          currentSize--;
+          stack.length = currentSize;
+          return lastRemovedItem;
+        }
+      }
+
+      function reverseStr(item) {
+        console.warn(item);
+        for (let i = 0; i < item.length; i++) {
+          push(item[i]);
+        }
+        for (let i = 0; i < item.length; i++) {
+          item[i] = pop();
+        }
+      }
+
+      let str = "Hello";
+      str = str.split("");
+
+      reverseStr(str);
+      console.warn(str.join(""));
+      //   console.warn(stack);
+    </script>
+  </head>
+  <body>
+    <h1>Reverse a String using Stack in Javascript</h1>
+  </body>
+</html>

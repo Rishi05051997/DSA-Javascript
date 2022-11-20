@@ -2,7 +2,37 @@
 <html lang="en">
   <head>
     <title>Practice</title>
-    <script></script>
+    <script>
+      const stack = [];
+      let currentSize = stack.length;
+
+      function push(val) {
+        stack[currentSize] = val;
+        currentSize++;
+      }
+
+      function pop() {
+        let lastIndexRemoved = stack[currentSize - 1];
+        currentSize--;
+        stack.length = currentSize;
+        return lastIndexRemoved;
+      }
+
+      function reverseStr(arr) {
+        for (let i = 0; i < arr.length; i++) {
+          push(arr[i]);
+        }
+
+        for (let i = 0; i < arr.length; i++) {
+          arr[i] = pop();
+        }
+      }
+
+      let str = "Vrushabh Dhatrak";
+      str = str.split("");
+      reverseStr(str);
+      console.warn(str.join(""));
+    </script>
   </head>
   <body></body>
 </html>

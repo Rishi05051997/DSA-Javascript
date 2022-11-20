@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stack | Input | Buttons</title>
+    <script>
+      const data = [];
+      let stackSize = data.length;
+      const maxEL = 5;
+      function customPush(value) {
+        if (stackSize <= maxEL) {
+          data[stackSize] = value;
+          stackSize++;
+        } else {
+          alert("Stack is full");
+        }
+      }
+
+      function customPull() {
+        if (stackSize === 0) {
+          alert("stack is empty");
+        } else {
+          stackSize--;
+          data.length = stackSize;
+        }
+      }
+      function addEl() {
+        const val = parseInt(document.getElementById("Value").value);
+        customPush(val);
+        console.warn(data);
+        document.getElementById("Value").value = "";
+      }
+
+      function removeEl() {
+        customPull();
+        console.warn(data);
+      }
+    </script>
+  </head>
+  <body>
+    <h1>Stack In Javascript</h1>
+    <br />
+    <input type="text" placeholder="Enter element" id="Value" />
+    <button onclick="addEl()">Add Element</button>
+    <button onclick="removeEl()">Remove Element</button>
+  </body>
+</html>
