@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Haid | And | Tail | Recursion</title>
+    <script>
+      // Call Stack is used for managing execution context in JS.
+      // function colors() {
+      //   let data = 20;
+      //   console.log(data);
+      // }
+      // function days() {
+      //   colors();
+      // }
+      // function fruits() {
+      //   days();
+      // }
+
+      // function topFunction() {
+      //   fruits();
+      // }
+
+      // topFunction();
+
+      // Haid Recusrion
+      function test(x) {
+        console.warn(x);
+        // while doing any kind of operation before recursion function that is nothing but "Haid Recursion"
+        if (x > 0) {
+          test(x - 1);
+        }
+        // While doing any kind of operation operation after recursive function that is nothing but "Tail Recursion"
+      }
+
+      test(5);
+    </script>
+  </head>
+  <body>
+    <h1>Haid And Tail Recursion</h1>
+  </body>
+</html>

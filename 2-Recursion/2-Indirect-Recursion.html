@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Indirect Recursion</title>
+    <script>
+      // In case of Indirect recursion we are calling same functions alternatively into one & another
+      // like here we called buyMore() function into buyApple(), buyApple() function into buyMore() function
+      let money = 100;
+      let appleCounter = 0;
+
+      function buyApple(moneyArg) {
+        if (moneyArg > 0) {
+          appleCounter++;
+          console.warn(`I have ${moneyArg} Rs & Apples: ${appleCounter}`);
+          buyMore(moneyArg);
+        } else {
+          console.warn(`I don't have money`);
+        }
+      }
+
+      function buyMore(moneyFromAppleFun) {
+        moneyFromAppleFun = moneyFromAppleFun - 20;
+        buyApple(moneyFromAppleFun);
+      }
+
+      buyApple(money);
+    </script>
+  </head>
+  <body>
+    <h1>Indirect Recursion</h1>
+  </body>
+</html>

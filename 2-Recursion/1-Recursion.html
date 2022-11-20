@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recursion | Basic</title>
+    <script>
+      // Recursion is one the important & powerfull Data Structure. In case of recursion we called same function multiple times based on some condition, so here condition play an important role in case if recursion
+      // Recursion is all about conditions
+      // Types
+      //    -- Direct
+      //    -- Indirtect
+
+      //   function apple(argument) {
+      //     console.warn(argument);
+      //     if (argument < 10) {
+      //       // Here we apply conditon
+      //       apple(argument + 1); // Based upon above we are calling same function again & again
+      //     }
+      //   }
+      //   let parameter = 0;
+      //   apple(parameter);
+
+      // Factorial Of a Number using Recursion
+      // Factorial of 5 = 5*4*3*2*1
+
+      function factorial(num) {
+        if (num == 0) {
+          return 1;
+        }
+        return num * factorial(num - 1);
+        // return 5*factorial(5-1)**factorial(4-1)*factorial(3-1)*factorial(2-1)*factorial(1)
+        // return 5*4*factorial(4-1)
+        // return 5*4*3*factorial(3-1)
+        // return 5*4*3*2*factorial(2-1)
+        // return 5*4*3*2*factorial(1)
+        // return 5*4*3*2*1 = 120
+      }
+
+      console.warn(factorial(6));
+    </script>
+  </head>
+  <body></body>
+</html>
