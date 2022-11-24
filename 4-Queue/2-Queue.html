@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Queue | Front | Rear | isEmpty</title>
+    <script>
+      let queue = [];
+      let currentSize = queue.length;
+      let maxSize = 5;
+      /*
+        Enqueue is a function to add element to the front/start of Array
+        @param newVal
+      */
+      //   function enqueue(newVal) {
+      //     if (currentSize >= maxSize) {
+      //       alert("Queue is already full");
+      //     } else {
+      //       queue[currentSize] = newVal;
+      //       currentSize++;
+      //     }
+      //   }
+
+      function enqueueWithBtn() {
+        let newVal = parseInt(document.getElementById("newVal").value);
+        if (currentSize >= maxSize) {
+          alert("Queue is already full");
+        } else {
+          queue[currentSize] = newVal;
+          currentSize++;
+          document.getElementById("newVal").value = "";
+        }
+      }
+
+      /*
+        display is a function to display all the elements inside queue
+      */
+      function display() {
+        console.warn(queue);
+      }
+
+      /*
+        dequeue is a function to Remove item from Front/Start Of Array
+      */
+      function dequeue() {
+        for (let i = 0; i < queue.length - 1; i++) {
+          queue[i] = queue[i + 1];
+        }
+        pop();
+        // console.warn(queue);
+      }
+
+      /*
+        pop is a function to Remove item from from End/Rear of the Array
+      */
+      function pop() {
+        if (!isEmpty()) {
+          currentSize--;
+          queue.length = currentSize;
+        } else {
+          alert("Queue is already empty");
+        }
+      }
+
+      /*
+        front is a function which will return front element of an array
+      */
+      function front() {
+        let front;
+        if (!isEmpty()) {
+          front = queue[0];
+          console.warn(front, "First Element");
+          return front;
+        } else {
+          alert("Queue is already empty");
+        }
+      }
+
+      /*
+        rear is a function which will return last element of an array
+      */
+      function rear() {
+        let last;
+        if (!isEmpty()) {
+          last = queue[currentSize - 1];
+          console.warn(last, "Last Element");
+          return last;
+        } else {
+          alert("Queue is already empty");
+        }
+      }
+
+      /*
+        isEmpty is a function which will tell whether a given is empty or not
+      */
+      function isEmpty() {
+        if (currentSize <= 0) {
+          return true;
+        }
+        return false;
+      }
+
+      //   enqueue(10);
+      //   enqueue(20);
+      //   enqueue(30);
+      //   enqueue(40);
+      //   enqueue(50);
+      //   display();
+      //   console.warn(front(), "First Element");
+      //   console.warn(rear(), "Last Element");
+      //   dequeue();
+      //   display();
+      //   console.warn(front(), "First Element");
+      //   console.warn(rear(), "Last Element");
+      //   display();
+    </script>
+  </head>
+  <body>
+    <h1>Front, Rear & isEmpty in Queue</h1>
+    <h1>Queue with Input in Javascript</h1>
+    <input type="text" id="newVal" />
+    <button onclick="enqueueWithBtn()">Add Element</button>
+    <button onclick="dequeue()">Remove Element</button>
+    <button onclick="display()">Display Element</button>
+    <button onclick="front()">Display Front Element</button>
+    <button onclick="rear()">Display Rear Element</button>
+  </body>
+</html>

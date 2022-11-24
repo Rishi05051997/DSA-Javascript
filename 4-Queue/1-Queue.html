@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Queue</title>
+    <script>
+      // Queue is a linear data structure in Javascript. Linear DS is nothing elaments are arrange in a specific order.
+      // In case of Queue:
+      //    ---- Element Addition -->> Front/Start Of Array -->> push() Default Function
+      //    ---- Element Removal -->> Front/Start Of Array -->> shift() Default Function
+      // Queue is Mainly works on "FIFO" Approach
+      // FIFO -->> FIRST IN FIRST OUT
+      // Enqueue -->> Add Item to the front/start of Array -->> push() Default Function
+      // Dequeue -->> Remove item from from Front/Start Of Array -->> shift() Default Function
+
+      let queue = [];
+      let currentSize = queue.length;
+      let maxSize = 5;
+      /*
+        Enqueue is a function to add element to the front/start of Array
+      */
+      function enqueue(newVal) {
+        if (currentSize >= maxSize) {
+          alert("Queue is already full");
+        } else {
+          queue[currentSize] = newVal;
+          currentSize++;
+        }
+      }
+
+      /*
+        display is a function to display all the elements inside queue
+      */
+      function display() {
+        console.warn(queue);
+      }
+
+      /*
+        dequeue is a function to Remove item from Front/Start Of Array
+      */
+      function dequeue() {
+        for (let i = 0; i < queue.length - 1; i++) {
+          queue[i] = queue[i + 1];
+        }
+        pop();
+        // console.warn(queue);
+      }
+
+      /*
+        pop is a function to Remove item from from End/Rear of the Array
+      */
+      function pop() {
+        if (currentSize > 0) {
+          currentSize--;
+          queue.length = currentSize;
+        } else {
+          alert("Queue is already empty");
+        }
+      }
+
+      enqueue(10);
+      enqueue(20);
+      enqueue(30);
+      enqueue(40);
+      enqueue(50);
+      display();
+      dequeue();
+
+      display();
+    </script>
+  </head>
+  <body>
+    <h1>Queue In Javascript</h1>
+  </body>
+</html>

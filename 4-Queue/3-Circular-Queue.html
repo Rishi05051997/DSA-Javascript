@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // Circular Queue in Javascript
+      // In case of circular queue:
+      //    -- Initially -->> Front == Rear (After 1st value adding to the given array)
+      //    --  Front -->> 0 index          (After 2nd value adding to the given array)
+      //    --  Rear  -->> 1 index          (After 2nd value adding to the given array)
+      // In Case of Normal Queue:
+      //    -- Initially:
+      //        -- Front -->> Starting Element (After 1st value adding to the given array)
+      //        -- Rear  -->> End Element      (After 1st value adding to the given array)
+
+      class Queue {
+        constructor(maxSize) {
+          this.max = maxSize;
+          this.items = new Array(maxSize);
+          this.currentSize = 0;
+          this.rear = -1;
+          this.front = -1;
+        }
+
+        enqueue(newVal) {
+          if (this.currentSize != this.max) {
+            if (this.rear == this.max - 1) {
+              this.rear = 0;
+            } else {
+              this.rear++;
+            }
+            this.items[this.rear] = newVal;
+            this.currentSize++;
+            if (this.front == -1) {
+              this.front = this.rear;
+            }
+          }
+        }
+
+        dequeue() {
+          if (!this.isEmpty()) {
+            this.items[this.front] = null;
+            if (this.front == this.max - 1) {
+              this.front = 0;
+            } else {
+              this.front++;
+            }
+            this.currentSize--;
+          } else {
+            this.front--;
+            this.rear--;
+            alert("Queue is empty");
+          }
+        }
+
+        isEmpty() {
+          if (this.currentSize == 0) {
+            return true;
+          }
+          return false;
+        }
+      }
+
+      let queue = new Queue(5);
+      //   queue.enqueue(10);
+      //   console.warn(queue.items);
+      //   console.warn(queue.rear, "Rear");
+      //   console.warn(queue.front, "Front");
+      //   queue.enqueue(20);
+      //   console.warn(queue.items);
+      //   console.warn(queue.rear, "Rear");
+      //   console.warn(queue.front, "Front");
+      //   queue.enqueue(30);
+      //   queue.enqueue(40);
+      //   queue.enqueue(50);
+      //   queue.enqueue(60);
+      //   queue.enqueue(70);
+    </script>
+  </head>
+  <body>
+    <h1>Circular Queue in Javascript</h1>
+  </body>
+</html>

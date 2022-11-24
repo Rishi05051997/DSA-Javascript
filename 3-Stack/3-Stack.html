@@ -14,7 +14,7 @@
         currentSize++;
       }
 
-      function pop() {
+      function customPop() {
         let lastRemovedItem = stack[currentSize - 1];
         if (currentSize === 0) {
           alert("Stack is empty");
@@ -31,7 +31,7 @@
           push(item[i]);
         }
         for (let i = 0; i < item.length; i++) {
-          item[i] = pop();
+          item[i] = customPop();
         }
       }
 
